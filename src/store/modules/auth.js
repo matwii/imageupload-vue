@@ -1,5 +1,6 @@
 import api from '../../api/imgur';
 import qs from 'qs';
+import { router } from '../../main' //Curly bracket because of named object. Not export default
 
 const state = {
     token: window.localStorage.getItem('imgur_token') //Looks to see if token is stored in LocalStorage
@@ -19,6 +20,8 @@ const actions = {
 
         commit('setToken', query.access_token); //Calls the setToken on the commute function
         window.localStorage.setItem('imgur_token', query.access_token) //Stores the token in localstorage
+        router.push('/')
+
     },
     login: () => {
         api.login(); //Takes the login method from the api object.
