@@ -1,5 +1,8 @@
 <template>
-    <AppHeader />
+    <div>
+        <AppHeader />
+        <router-view />
+    </div>
 </template>
 
 <script>
@@ -7,6 +10,8 @@
 
     export default {
         name: 'App',
-        components: {AppHeader}
+        components: {
+            AppHeader
+        }
     }
 </script>
