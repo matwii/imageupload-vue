@@ -14,7 +14,8 @@ export const router = new VueRouter({
     routes: [
         { path: '/', component: ImageList},
         { path: '/oauth2/callback', component: AuthHandler },
-        { path: '/upload', component: UploadForm }
+        { path: '/upload', component: UploadForm },
+        { path: '*', redirect: '/' }
     ]
 });
 
